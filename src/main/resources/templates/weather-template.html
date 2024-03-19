@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Chisinau MD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .weather-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .city {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .temperature {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .condition {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Погода Кишинев</h1>
+    </div>
+</header>
+
+<div class="weather-container">
+    <div class="day" th:text="${weather.date}"></div>
+    <div class="time" th:text="${weather.time}"></div>
+    <div class="city">Прогноз погоды в Кишиневе</div>
+    <div class="condition" th:text="${weather.condition}"></div>
+    <div class="temperature" th:text="${weather.temperature}"></div>
+    <div class="additional-info">
+        <p th:text="${weather.fellTemperature}"></p>
+        <p th:text="${weather.humidity}"></p>
+        <p th:text="${weather.tension}"></p>
+        <p th:text="${weather.wind}"></p>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Погодный сайт. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
